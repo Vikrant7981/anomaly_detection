@@ -268,7 +268,8 @@ def main():
         print("Unknown mode: ", mode)
         exit(1)
 
-    _, _, train_log_px = model.predict(train_X, batch_size=1)
+    
+     _, _, train_log_px = model.predict(train_X, batch_size=1)
     train_log_px = train_log_px.reshape(train_log_px.shape[0], train_log_px.shape[2])
     df_train_log_px = pd.DataFrame()
     df_train_log_px['log_px'] = np.mean(train_log_px, axis=1)
@@ -276,9 +277,11 @@ def main():
 
     _, _, test_log_px = model.predict(test_X, batch_size=1)
     test_log_px = test_log_px.reshape(test_log_px.shape[0], test_log_px.shape[2])
-    df_log_px = pd.DataFrame()
-    df_log_px['log_px'] = np.mean(test_log_px, axis=1)
-    df_log_px = pd.concat([df_train_log_px, df_log_px])
+    df_test_log_px = pd.DataFrame()
+    df_test_log_px['log_px'] = np.mean(test_log_px, axis=1)
+    plot_log_likelihood(df_test_log_px)
+
+    df_log_px = pd.concat([df_train_log_px, df_test_log_px])
     df_log_px['threshold'] = threshold
     df_log_px['anomaly'] = df_log_px['log_px'] > df_log_px['threshold']
     df_log_px.index = np.array(all_df)[:, 0]
