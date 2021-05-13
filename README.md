@@ -8,7 +8,7 @@ Paper link :- https://arxiv.org/abs/1907.01702
 Model file that is to be run is velc_model.py
 
 # anomaly_detection_simple_vae_lstm
-Here we have tried to implement the time series anomaly detection using VAE using where the encoder and decoder layers are simple forward directional LSTMs.
+Here we have tried to implement the time series anomaly detection using VAE using where the encoder and decoder layers are  Bi-directional LSTMs.
 
 
 Model file that is to be run is simple_vae_lstm_model.py
