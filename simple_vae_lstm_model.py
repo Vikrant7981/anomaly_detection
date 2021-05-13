@@ -22,7 +22,7 @@ time_step = 1
 lstm_h_dim = 8
 z_dim = 4
 epoch_num = 59
-threshold = 0.03
+threshold = 1
 
 mode = 'train'
 model_dir = "./lstm_vae_model/"
@@ -279,7 +279,7 @@ def main():
     df_log_px = pd.DataFrame()
     df_log_px['log_px'] = np.mean(test_log_px, axis=1)
     df_log_px = pd.concat([df_train_log_px, df_log_px])
-    df_log_px['threshold'] = 0.65
+    df_log_px['threshold'] = threshold
     df_log_px['anomaly'] = df_log_px['log_px'] > df_log_px['threshold']
     df_log_px.index = np.array(all_df)[:, 0]
 
