@@ -23,8 +23,8 @@ lstm_h_dim = 8
 z_dim = 4
 epoch_num = 32
 threshold = 1
-alpha = 0.6
-beta = 0.4
+alpha = 0.8
+beta = 0.2
 
 
 #extension parameters
