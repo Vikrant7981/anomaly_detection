@@ -27,7 +27,6 @@ We have done some pre-processing and the final output "Bearing_dataset.csv" data
 Code that is used in pre-processing and to generate insights about data is also available in "pre_processing_insights.py".
 
 # References
-https://github.com/shaohua0116/VAE-Tensorflow
 
 https://towardsdatascience.com/machine-learning-for-anomaly-detection-and-condition-monitoring-d4614e7de770
 
@@ -35,6 +34,7 @@ https://towardsdatascience.com/how-to-use-machine-learning-for-anomaly-detection
 
 https://towardsdatascience.com/variational-autoencoders-as-generative-models-with-keras-e0c79415a7eb
 
+https://github.com/shaohua0116/VAE-Tensorflow
 
 
 ## Code uses the rest of the folders to save model and the Images.
