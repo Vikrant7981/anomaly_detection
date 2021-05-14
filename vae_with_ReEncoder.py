@@ -264,20 +264,18 @@ def plot_log_likelihood(df_log_px):
     sns.distplot(df_log_px, bins=40, kde=True, rug=True, color='blue')
     plt.savefig(image_dir + 'log_likelihood_' + mode + '.png')
 
-
 def plot_anomaly_train_score(df_anomaly):
     plt.figure(figsize=(14, 6), dpi=80)
-    plt.title("Anomaly Score")
-    sns.set_color_codes()
-    sns.distplot(df_anomaly, bins=40, kde=True, rug=True, color='blue')
+    plt.title("Train Anomaly Score")
+    plt.plot(df_anomaly)
     plt.savefig(image_dir + 'anomaly_score_train' + '.png')
 
 def plot_anomaly_test_score(df_anomaly):
     plt.figure(figsize=(14, 6), dpi=80)
-    plt.title("Anomaly Score")
-    sns.set_color_codes()
-    sns.distplot(df_anomaly, bins=40, kde=True, rug=True, color='blue')
+    plt.title("Test Anomaly Score")
+    plt.plot(df_anomaly)
     plt.savefig(image_dir + 'anomaly_score_test' + '.png')
+
 
 def save_model(model):
     with open(model_dir + 'lstm_vae.json', 'w') as f:
