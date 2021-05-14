@@ -22,7 +22,7 @@ time_step = 1
 lstm_h_dim = 8
 z_dim = 4
 epoch_num = 32
-threshold = 1
+threshold = 50
 alpha = 0.8
 beta = 0.2
 
@@ -290,17 +290,16 @@ def plot_log_likelihood(df_log_px):
 
 def plot_anomaly_train_score(df_anomaly):
     plt.figure(figsize=(14, 6), dpi=80)
-    plt.title("Anomaly Score")
-    sns.set_color_codes()
-    sns.distplot(df_anomaly, bins=40, kde=True, rug=True, color='blue')
+    plt.title("Train Anomaly Score")
+    plt.plot(df_anomaly)
     plt.savefig(image_dir + 'anomaly_score_train' + '.png')
 
 def plot_anomaly_test_score(df_anomaly):
     plt.figure(figsize=(14, 6), dpi=80)
-    plt.title("Anomaly Score")
-    sns.set_color_codes()
-    sns.distplot(df_anomaly, bins=40, kde=True, rug=True, color='blue')
+    plt.title("Test Anomaly Score")
+    plt.plot(df_anomaly)
     plt.savefig(image_dir + 'anomaly_score_test' + '.png')
+
 
 
 def save_model(model):
