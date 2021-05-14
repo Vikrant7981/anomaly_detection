@@ -35,8 +35,8 @@ epoch_num = 32
 threshold = 1
 
 learning_rate = 1e-5
-alpha = 0.6
-beta = 0.4
+alpha = 0.8
+beta = 0.2
 
 mode = 'train'
 model_dir = "./lstm_vae_model/"
