@@ -372,7 +372,7 @@ def main():
     anomaly_score_test,loss_test,test_log_px = model.predict(test_X, batch_size=1)
     test_log_px = test_log_px.reshape(test_log_px.shape[0], test_log_px.shape[2])
     df_test_log_px = pd.DataFrame()
-    df_test_log_px['log_px'] = np.mean(df_test_log_px, axis=1)
+    df_test_log_px['log_px'] = np.mean(test_log_px, axis=1)
     plot_log_likelihood_test(df_test_log_px)
 
     df_log_px = pd.DataFrame()
