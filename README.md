@@ -1,4 +1,4 @@
-# anomaly_detection_velc
+# anomaly_detection_VELC
 
 Here we have tried to implement the research paper "VELC: A New Variational AutoEncoder Based
 Model for Time Series Anomaly Detection"
@@ -7,7 +7,7 @@ Paper link :- https://arxiv.org/abs/1907.01702
 
 Model file that is to be run is velc_model.py
 
-# anomaly_detection_simple_vae_lstm
+# anomaly_detection_simple_VAE_LSTM
 Here we have tried to implement the time series anomaly detection using VAE using where the encoder and decoder layers are  Bi-directional LSTMs.
 
 
