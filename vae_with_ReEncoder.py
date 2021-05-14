@@ -347,21 +347,25 @@ def main():
     anomaly_score_test,loss_test,test_log_px = model.predict(test_X, batch_size=1)
     test_log_px = test_log_px.reshape(test_log_px.shape[0], test_log_px.shape[2])
     df_test_log_px = pd.DataFrame()
-
     df_test_log_px['log_px'] = np.mean(df_test_log_px, axis=1)
     plot_log_likelihood_test(df_test_log_px)
 
-    df_log_px = pd.concat([df_train_log_px, df_test_log_px])
+    df_log_px = pd.DataFrame()
+    df_log_px['log_px'] = np.mean(test_log_px, axis=1)
+    df_log_px = pd.concat([df_train_log_px, df_log_px])
     df_log_px['threshold'] = threshold
     df_log_px['anomaly'] = df_log_px['log_px'] > df_log_px['threshold']
     df_log_px.index = np.array(all_df)[:, 0]
 
     df_log_px.plot(logy=True, figsize=(16, 9), color=['blue', 'red'])
-    plt.savefig(image_dir + 'anomaly_lstm_vae_' + mode + '.png')
+    plt.savefig(image_dir + 'anomaly_lstm_vae_train_and_test' + '.png')
+
 
     df_test_anomaly = pd.DataFrame()
     df_test_anomaly['test_anomaly'] = anomaly_score_test
     plot_anomaly_test_score(df_test_anomaly)
+
+
 
 
 if __name__ == "__main__":
